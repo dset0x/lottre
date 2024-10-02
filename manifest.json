@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+  "name": "lottre",
+  "version": "1.0",
+  "description": "Make Trello more compact and add some shortcuts",
+  "permissions": [
+    "https://trello.com/*",
+    "storage",
+    "tabs",
+    "contextMenus"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://trello.com/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_start"
+    }
+  ],
+  "default_locale": "en",
+  "browser_action": {},
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "lottre@2c643a2d-6221-4493-a81d-ecf5510f6ee5",
+      "update_url": "https://raw.githubusercontent.com/dset0x/lottre/master/updates.json"
+    }
+  }
+}
